@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="container col-12">
+    
+    {% for key, value in email_para_enviar.items %}
+        <h2>Cliente: {{ key }} </h2>
+        <h4>Licenças com expiração próxima enviadas por e-mail:</h4>
+        {% for v in value.mensagens %}
+            <li> {{ v }} </li>
+        
+        {% endfor %}
+    {% endfor %}
+    
+</section>
+
+
+{% endblock content %}
